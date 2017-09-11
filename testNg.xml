@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite1" parallel="none">
+	<test name="Test1">
+		<parameter name="p" value="5"></parameter>
+		<parameter name="param1" value="2"></parameter>
+		<parameter name="param2" value="and a string parameter"></parameter>
+
+		<groups>
+			<run>
+				<include name="group1" />
+				<include name="group2" />
+			</run>
+		</groups>
+		<classes>
+			<class name="com.softserve.edu.CalcTestNG" />
+		</classes>
+	</test> <!-- Test1 -->
+</suite> <!-- Suite1 -->

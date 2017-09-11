@@ -3,13 +3,49 @@ package com.softserve.edu;
 
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterGroups;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeGroups;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 
 public class AppTest {
+	@BeforeSuite
+	public static void beforeSuite() {
+		System.out.println("BeforeSuite");
+	}
+	
+	@AfterSuite
+	public static void afterSuite() {
+		System.out.println("AfterSuite");
+	}
+	
+	@BeforeGroups
+	public static void beforeGroups() {
+		System.out.println("BeforeGroups");
+	}
+	
+	@AfterGroups
+	public static void afterGroups() {
+		System.out.println("afterGroups");
+	}
+	
+	@BeforeTest
+	public void setUp() throws Exception {
+		System.out.println("setUp()");
+	}
+
+	@AfterTest
+	public void tearDown() throws Exception {
+		System.out.println("tearDown()");
+	}
+	
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
 		System.out.println("setUpBeforeClass()");
@@ -19,15 +55,15 @@ public class AppTest {
 	public static void tearDownAfterClass() throws Exception {
 		System.out.println("tearDownAfterClass()");
 	}
-
-	@BeforeTest
-	public void setUp() throws Exception {
-		System.out.println("setUp()");
+	
+	@BeforeMethod
+	public static void beforeMethod() throws Exception {
+		System.out.println("BeforeMethod");
 	}
 
-	@AfterTest
-	public void tearDown() throws Exception {
-		System.out.println("tearDown()");
+	@AfterMethod
+	public static void afterMethod() throws Exception {
+		System.out.println("AfterMethod");
 	}
 
 	@Test
