@@ -5,29 +5,35 @@ package com.softserve.edu;
  */
 public class Team {
     private int teamSize;
+    private String teamName;
     public String future;
 
     public Team() {
     }
 
+    public String getTeamName() {
+        return teamName;
+    }
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
+    }
+
     public int getTeamSize() {
         return teamSize;
     }
-
-
     public void setTeamSize(int teamSize) {
         this.teamSize = teamSize;
     }
 
     public String predictFuture(int teamSize){
         if (teamSize < 1) {
-            future = "Dark";
+            future = "dark";
         }
         else if (teamSize > 0 && teamSize < 5){
-            future = "Manageble";
+            future = "manageble";
         }
         else {
-            future = "You will have a looot of work";
+            future = "very dependant";
         }
     return future;
     }
